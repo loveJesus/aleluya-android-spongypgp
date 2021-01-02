@@ -11,10 +11,20 @@ and
 in your app/libs folder. Go into Project Files view on the right side and drag them in. The right click on each of them and click "Add as Library".
 You will then have ```my.bouncycastle.openpgp.*``` available (or whatever name you used, like ```us.xjes.bouncyleluya```) for the package hierarchy.
 
-Here are the commands for my usage
+Here are the mybc commands for my usage
 ```
+sudo apt install -y openjdk-8-jdk maven ant npm
+sudo update-alternatives --config java
+# Find the directory there too
+export JAVA_HOME="(dir from above after selecting)"
+sudo npm install -g @jbuhacoff/mybc
+git clone https://github.com/bcgit/bc-java && cd bc-java
+git checkout -b mybc-1.68-aleluya tags/r1rv68
 mybc prebuild --providerName BCleluya --packageName us.xjes.bouncyleluya --displayName BouncyCastleAleluya
+export JDKPATH="$JAVA_HOME"
+sh ./build15+
 mybc postbuild --groupId us.xjes.bouncyleluya
+# -shaded libs to copy now in build
 ```
 
 I is important to include the new Security provider. Run ```Security.addProvider(BouncyCastleProvider())``` on the initial onCreate with using the imported BouncyCastleProvider you created as one method of doing it.
