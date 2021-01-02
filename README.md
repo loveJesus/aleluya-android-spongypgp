@@ -9,7 +9,13 @@ Once you complete the steps, a simple way of using the file in android is to inc
 and
 ```bcprov-jdk15on-168-shaded.jar```
 in your app/libs folder. Go into Project Files view on the right side and drag them in. The right click on each of them and click "Add as Library".
-You will then have ```my.bouncycastle.openpgp.*``` available (or whatever name you used, like us.xjes.bouncyleluya) for the package hierarchy.
+You will then have ```my.bouncycastle.openpgp.*``` available (or whatever name you used, like ```us.xjes.bouncyleluya```) for the package hierarchy.
+
+Here are the commands for my usage
+```
+mybc prebuild --providerName BCleluya --packageName us.xjes.bouncyleluya --displayName BouncyCastleAleluya
+mybc postbuild --groupId us.xjes.bouncyleluya
+```
 
 I is important to include the new Security provider. Run ```Security.addProvider(BouncyCastleProvider())``` on the initial onCreate with using the imported BouncyCastleProvider you created as one method of doing it.
 
