@@ -27,7 +27,7 @@ mybc postbuild --groupId us.xjes.bouncyleluya
 # -shaded libs to copy now in build
 ```
 
-I is important to include the new Security provider. Run ```Security.addProvider(BouncyCastleProvider())``` on the initial onCreate with using the imported BouncyCastleProvider you created as one method of doing it.
+It is important to include the new Security provider. Run ```Security.addProvider(BouncyCastleProvider())``` on the initial onCreate with using the imported BouncyCastleProvider you created as one method of doing it.
 
 For an example of symmetrical encryption with their ```openpgp.examples.ByteArrayHandler``` in Kotlin
 
